@@ -1,13 +1,9 @@
 "use client";
-import Navbar from "@/components/navbar";
-import { ThemeProvider } from "@/components/theme-provider";
 import ProfileCard from "@/components/ui/ProfileCard";
 import React from "react";
 import ProfileImg from "../assets/images/HafizhKurniawan.png";
 import TextType from "@/components/ui/TextType";
-import { Button } from "@/components/ui/button";
 import { Contact2 } from "@/components/contact-2";
-import BlurText from "@/components/BlurText";
 import TechStackCards from "@/components/techStackCards";
 
 const Page = () => {
