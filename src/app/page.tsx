@@ -1,103 +1,92 @@
-import Image from "next/image";
+"use client";
+import Navbar from "@/components/navbar";
+import { ThemeProvider } from "@/components/theme-provider";
+import ProfileCard from "@/components/ui/ProfileCard";
+import React from "react";
+import ProfileImg from "../assets/images/HafizhKurniawan.png";
+import TextType from "@/components/ui/TextType";
+import { Button } from "@/components/ui/button";
+import { Contact2 } from "@/components/contact-2";
+import BlurText from "@/components/BlurText";
+import TechStackCards from "@/components/techStackCards";
 
-export default function Home() {
+const Page = () => {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="h-dvh text-white mx-2 md:mx-12" id="#">
+      <section className="mb-32">
+        <div className="h-dvh md:grid md:grid-cols-2 flex flex-col-reverse justify-center items-center gap-8 md:gap-12">
+          <div className="flex flex-col justify-center md:ml-8">
+            <h1 className="text-xl md:text-2xl text-center md:text-left">
+              Hi Everyone,
+            </h1>
+            <h1 className="text-2xl md:text-3xl text-center md:text-left mb-4">
+              I'm{" "}
+              <span className="text-blue-400 font-semibold md:font-bold">
+                Hafizh Kurniawan
+              </span>
+            </h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+            <TextType
+              text={[
+                "Front-End Developer",
+                "Informatics Student",
+                "Web Enthusiast",
+              ]}
+              typingSpeed={75}
+              pauseDuration={1500}
+              showCursor={true}
+              cursorCharacter="|"
+              className="text-2xl md:text-3xl italic text-center md:text-left font-semibold text-gray-400 underline underline-offset-8"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+
+          <div className="flex justify-center items-center">
+            <ProfileCard
+              avatarUrl={ProfileImg.src}
+              name=""
+              title=""
+              showUserInfo={false}
+            />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      <section className="mb-48">
+        <h1 className="text-center text-3xl md:text-4xl font-semibold mb-8">
+          About <span className="text-blue-400">Me</span>
+        </h1>
+        <p className="text-xl text-center md:mx-20">
+          I am a highly motivated 5th-semester student with a profound passion
+          for web development. My academic journey has provided me with a strong
+          foundation in both front-end and back-end technologies, and I am
+          dedicated to continuously expanding my knowledge and skill set beyond
+          the classroom. I am actively seeking opportunities to contribute to
+          innovative and impactful projects that challenge me to grow and solve
+          real-world problems through clean, efficient code.
+        </p>
+      </section>
+
+      <section id="techstack">
+        <div className="bg-gray-900 h-full mx-2 sm:md:8 md:mx-20 rounded-4xl">
+          <h1 className="text-center text-3xl md:text-4xl py-8 font-semibold">
+            TechStack &<span className="text-blue-400"> Tools</span>
+          </h1>
+
+          <TechStackCards />
+        </div>
+      </section>
+
+      <section id="contact">
+        <Contact2
+          title="Contact Us"
+          description="We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!"
+          phone="(123) 34567890"
+          email="email@example.com"
+          web={{ label: "shadcnblocks.com", url: "https://shadcnblocks.com" }}
+        />
+      </section>
     </div>
   );
-}
+};
+
+export default Page;
